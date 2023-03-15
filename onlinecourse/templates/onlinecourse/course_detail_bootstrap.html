@@ -67,7 +67,7 @@
             <div id="collapseExam" class="collapse">
                 <div class="card card-body">
                     <!-- A choice submission form example -->
-                    <form id="questionform" action="point to a submit view" method="post">
+                    <form id="questionform" action="{% url 'onlinecourse:submit_exam' course.id %}" method="post">
                         <!-- ... for each question in the course ... -->
                         {% csrf_token %}
                         {% for question in course.question_set.all %}
