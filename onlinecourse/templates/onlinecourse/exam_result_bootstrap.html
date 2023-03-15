@@ -62,7 +62,11 @@
                                 <div class="text-warning">Not selected: {{ choice.content }}</div>
                             {% endif %}
                         {% else %}
-                            <div>{{ choice.content }}</div>
+                            {% if choice.id in selected_ids %}
+                                <div class="text-danger">Wrong answer:: {{ choice.content }}</div>
+                            {% else %}
+                                <div>{{ choice.content }}</div>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </div>
